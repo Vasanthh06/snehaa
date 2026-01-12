@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Day</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="page">
+      <h2>My Day 📝</h2>
+
+      <div class="card">
+        <input id="taskInput" placeholder="Enter task" />
+        <button onclick="addTask()">Add</button>
+        <ul id="taskList"></ul>
+      </div>
+
+      <h2>Word Quest 🧩</h2>
+
+      <div class="stats">
+        Score: <b id="score">0</b> | 🔥 Streak: <b id="streak">0</b>
+      </div>
+
+      <div class="word-game">
+        <div id="tiles"></div>
+        <input id="wordInput" maxlength="5" placeholder="Enter 5‑letter word" />
+        <button onclick="checkWord()">Try</button>
+        <p id="wordResult"></p>
+      </div>
+
+      <a href="index.html" class="btn">← Back</a>
+    </div>
+  </body>
+</html>
