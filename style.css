@@ -370,3 +370,82 @@ h1:hover {
   box-shadow: 0 0 40px rgba(29, 161, 242, 0.6),
     0 0 60px rgba(255, 111, 145, 0.6);
 }
+/* ---------- RESPONSIVE LAYOUT ---------- */
+.page {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Desktop layout */
+@media (min-width: 900px) {
+  .page {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+  }
+
+  .right-panel {
+    position: sticky;
+    top: 40px;
+    height: fit-content;
+  }
+}
+
+/* Mobile layout */
+@media (max-width: 899px) {
+  .page {
+    display: block;
+  }
+
+  .right-panel {
+    margin-top: 30px;
+  }
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.photos {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.photos img {
+  width: 100%;
+  max-width: 220px;
+  border-radius: 12px;
+}
+.profile-pic img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@media (max-width: 600px) {
+  .profile-pic img {
+    width: 70px;
+    height: 70px;
+  }
+}
+body {
+  font-size: 16px;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .social a {
+    width: 100%;
+  }
+}
