@@ -31,7 +31,13 @@
 
     <div class="top-bar">
       <div class="profile-pic">
-        <img src="sneha.jpg" />
+        <img src="sneha.jpg" id="profileImg" />
+      </div>
+
+      <!-- Full screen image viewer -->
+      <div id="imgModal" class="img-modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="fullImg" />
       </div>
 
       <div class="title-box">
@@ -162,6 +168,25 @@
       }
 
       document.getElementById("quote").innerText = quotes[get12HourIndex()];
+    </script>
+    <script>
+      const modal = document.getElementById("imgModal");
+      const img = document.getElementById("profileImg");
+      const modalImg = document.getElementById("fullImg");
+      const close = document.querySelector(".close");
+
+      img.onclick = function () {
+        modal.style.display = "flex";
+        modalImg.src = this.src;
+      };
+
+      close.onclick = function () {
+        modal.style.display = "none";
+      };
+
+      modal.onclick = function () {
+        modal.style.display = "none";
+      };
     </script>
   </body>
 </html>
