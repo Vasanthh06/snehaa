@@ -1,35 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-    <title>My Space ✨</title>
     <link rel="stylesheet" href="style.css" />
+    <title>My Space</title>
   </head>
 
   <body>
-    <!-- Top bar -->
-    <header class="top-bar">
+    <div class="header">
       <div class="profile-pic">
-        <img src="sneha.jpg" alt="Sneha" />
+        <img src="sneha.jpg" />
       </div>
       <div class="title-box">
         <h1>Hi, I’m Snehaa V Jeedi 💙</h1>
         <p>MBA Graduate | Joining My New Job On 2nd February</p>
       </div>
-    </header>
+    </div>
 
-    <main class="layout">
-      <!-- LEFT COLUMN -->
-      <section class="left">
+    <div class="page">
+      <!-- LEFT -->
+      <div>
         <div class="card">
           <h3>About Me</h3>
           <p>I completed my MBA and I’m starting a new chapter in my life.</p>
-          <p>MY Hobbies 📖 Reading | 🎵 Music | ✈ Travel | 🧘 Self‑growth</p>
+          <p>📖 Reading | 🎵 Music | ✈ Travel | 🧘 Self‑growth</p>
+        </div>
+
+        <div class="social">
+          <a class="insta" href="#"
+            ><i class="fa-brands fa-instagram"></i> Instagram</a
+          >
+          <a class="linkedin" href="#"
+            ><i class="fa-brands fa-linkedin"></i> LinkedIn</a
+          >
+          <a class="whatsapp" href="#"
+            ><i class="fa-brands fa-whatsapp"></i> WhatsApp</a
+          >
+          <a class="mail" href="#"
+            ><i class="fa-solid fa-envelope"></i> Mail Me</a
+          >
         </div>
 
         <div class="card">
@@ -40,43 +52,18 @@
             <img src="photo3.JPG" />
           </div>
         </div>
-      </section>
+      </div>
 
-      <!-- RIGHT COLUMN -->
-      <aside class="right">
-        <div class="social">
-          <a
-            class="insta"
-            href="https://www.instagram.com/_lil_missy_.27?igsh=d3czYTc4OHJlMnBz"
-            target="_blank"
-          >
-            <i class="fa-brands fa-instagram"></i> Instagram
-          </a>
-          <a
-            class="linkedin"
-            href="https://www.linkedin.com/in/sonyvjeedi"
-            target="_blank"
-          >
-            <i class="fa-brands fa-linkedin"></i> LinkedIn
-          </a>
-          <a class="whatsapp" href="https://wa.me/91XXXXXXXXXX" target="_blank">
-            <i class="fa-brands fa-whatsapp"></i> WhatsApp
-          </a>
-          <a class="mail" href="mailto:snehaavjeedi@gmail.com">
-            <i class="fa-solid fa-envelope"></i> Mail Me
-          </a>
-        </div>
-
+      <!-- RIGHT -->
+      <div class="right-panel">
         <div class="side-card">
           <h3>My Resume 📄</h3>
-          <div class="btn-row">
-            <a class="btn" href="Resume.pdf" target="_blank">View</a>
-            <a class="btn" href="Resume.pdf" download>Download</a>
-          </div>
+          <a class="btn" href="Resume.pdf" target="_blank">View</a>
+          <a class="btn" href="Resume.pdf" download>Download</a>
         </div>
 
         <div class="side-card">
-          <h3><span class="running-hourglass">⏳</span> Job Countdown</h3>
+          <h3>⏳ Job Countdown</h3>
           <p id="countdown"></p>
         </div>
 
@@ -84,45 +71,28 @@
           <h3>💌 Today’s Motivation</h3>
           <p id="quote"></p>
         </div>
-
-        <a href="day.html" class="btn full">Go to My Day →</a>
-      </aside>
-    </main>
+      </div>
+    </div>
 
     <script>
       const jobDate = new Date("2026-02-02");
-
-      function updateCountdown() {
+      setInterval(() => {
         const now = new Date();
         const diff = jobDate - now;
-
-        if (diff <= 0) {
-          document.getElementById("countdown").innerText =
-            "🎉 You started your new job! Proud of you 💖";
-          return;
-        }
-
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-        const mins = Math.floor((diff / (1000 * 60)) % 60);
-        const secs = Math.floor((diff / 1000) % 60);
-
+        const d = Math.floor(diff / 86400000);
+        const h = Math.floor(diff / 3600000) % 24;
+        const m = Math.floor(diff / 60000) % 60;
+        const s = Math.floor(diff / 1000) % 60;
         document.getElementById(
           "countdown"
-        ).innerText = `${days} Days ${hours}h ${mins}m ${secs}s to your first job 💼🔥`;
-      }
-
-      setInterval(updateCountdown, 1000);
-      updateCountdown();
+        ).innerText = `${d} Days ${h}h ${m}m ${s}s`;
+      }, 1000);
 
       const quotes = [
         "Believe in yourself 💫",
-        "You already made it 💖",
         "Big things are coming 🚀",
         "Your future is bright ✨",
-        "Hard work always wins 💪",
       ];
-
       document.getElementById("quote").innerText =
         quotes[new Date().getDate() % quotes.length];
     </script>

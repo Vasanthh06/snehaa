@@ -1,10 +1,16 @@
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
 body {
   margin: 0;
-  font-family: Segoe UI;
-  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #a1c4fd);
   background-size: 400% 400%;
   animation: bg 12s infinite;
 }
+
 @keyframes bg {
   0% {
     background-position: 0% 50%;
@@ -17,484 +23,44 @@ body {
   }
 }
 
-.page {
-  text-align: center;
-  padding: 30px;
-}
-
-.card,
-.word-game {
-  background: white;
-  max-width: 400px;
-  margin: 20px auto;
-  padding: 25px;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-input {
-  padding: 12px;
-  width: 70%;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-}
-
-button,
-.btn {
-  padding: 12px 25px;
-  background: #ff6f91;
-  color: white;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-#tiles {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin: 10px;
-}
-
-.tile {
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
-  font-size: 22px;
-  font-weight: bold;
-  border-radius: 10px;
-}
-
-.green {
-  background: #4caf50;
-  color: white;
-}
-
-.social a {
-  margin: 10px;
-  display: inline-block;
-}
-.photos {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-.photos img {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 15px;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-  transition: 0.4s;
-}
-
-.photos img:hover {
-  transform: scale(1.1);
-}
-/* Right side panel */
-.right-panel {
-  position: fixed;
-  top: 50%;
-  right: 25px;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  z-index: 10;
-}
-
-.side-card {
-  width: 260px;
-  background: rgba(255, 255, 255, 0.85);
-  padding: 20px;
-  border-radius: 18px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
-  transition: all 0.4s ease;
-  border-left: 5px solid #ff6f91;
-}
-
-/* ✨ Premium hover effect */
-.side-card:hover {
-  transform: translateX(-15px) scale(1.05);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
-  background: linear-gradient(135deg, #fff, #ffe6ef);
-}
-
-/* Text glow on hover */
-.side-card:hover h3 {
-  color: #ff4f7b;
-  text-shadow: 0 0 10px rgba(255, 79, 123, 0.5);
-}
-
-/* Buttons inside side panel */
-.side-card .btn {
-  display: inline-block;
-  margin: 10px 5px;
-  background: linear-gradient(135deg, #ff6f91, #ff9671);
-}
-/* RIGHT SIDE FLOATING PANEL */
-.right-panel {
-  position: fixed;
-  top: 50%;
-  right: 25px;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  z-index: 99;
-}
-
-.side-card {
-  width: 260px;
-  background: rgba(255, 255, 255, 0.85);
-  padding: 20px;
-  border-radius: 18px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
-  border-left: 6px solid #ff6f91;
-  transition: all 0.4s ease;
-}
-
-/* ✨ Classy hover */
-.side-card:hover {
-  transform: translateX(-18px) scale(1.06);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
-  background: linear-gradient(135deg, #fff, #ffe4ef);
-}
-
-.side-card h3 {
-  transition: 0.3s;
-}
-
-.side-card:hover h3 {
-  color: #ff4f7b;
-  text-shadow: 0 0 10px rgba(255, 79, 123, 0.5);
-}
-/* ===== Premium hover for Name & About Me ===== */
-
-h1 {
-  display: inline-block;
-  padding: 10px 25px;
-  border-radius: 20px;
-  transition: all 0.4s ease;
-  background: linear-gradient(135deg, #ffffff, #ffe6f0);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-h1:hover {
-  transform: scale(1.05) translateY(-5px);
-  background: linear-gradient(135deg, #ff6f91, #ff9671);
-  color: white;
-  box-shadow: 0 20px 40px rgba(255, 111, 145, 0.6);
-}
-
-/* About Me card special effect */
-.card:first-of-type {
-  position: relative;
-  overflow: hidden;
-  transition: all 0.5s ease;
-}
-
-/* Glow sweep animation */
-.card:first-of-type::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255, 111, 145, 0.4),
-    transparent
-  );
-  transition: 0.6s;
-}
-
-.card:first-of-type:hover::before {
-  left: 100%;
-}
-
-.card:first-of-type:hover {
-  transform: scale(1.05) translateY(-6px);
-  box-shadow: 0 25px 50px rgba(255, 111, 145, 0.5);
-  background: linear-gradient(135deg, #fff0f5, #ffffff);
-}
-/* ===== Love‑Blue Hover for Social Icons ===== */
-.social a {
-  position: relative;
-  font-weight: bold;
-  color: #333;
-  transition: 0.4s ease;
-}
-
-/* Blue glow + lift */
-.social a:hover {
-  color: #1da1f2;
-  transform: translateY(-6px) scale(1.1);
-  text-shadow: 0 0 12px rgba(29, 161, 242, 0.7);
-}
-
-/* 💙 floating heart on hover */
-.social a::after {
-  content: "💙";
-  position: absolute;
-  top: -20px;
-  right: -10px;
-  opacity: 0;
-  font-size: 18px;
-  transform: scale(0);
-  transition: 0.4s ease;
-}
-
-.social a:hover::after {
-  opacity: 1;
-  transform: scale(1.2) translateY(-10px);
-}
-
-/* ===== Extra glow for Snehaa's name ===== */
-h1:hover {
-  box-shadow: 0 0 40px rgba(29, 161, 242, 0.6),
-    0 0 60px rgba(255, 111, 145, 0.6);
-}
-.social a {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 20px;
-  border-radius: 30px;
-  background: white;
-  margin: 10px auto;
-  width: 260px;
-  justify-content: center;
-  font-size: 18px;
-  transition: 0.4s ease;
-  text-decoration: none;
-  color: #333;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* Icon style */
-.social i {
-  font-size: 22px;
-  transition: 0.4s;
-}
-
-/* Instagram hover */
-.social a.insta:hover {
-  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
-  color: white;
-  transform: scale(1.1);
-}
-
-/* LinkedIn hover */
-.social a.linkedin:hover {
-  background: #0077b5;
-  color: white;
-  transform: scale(1.1);
-}
-
-/* WhatsApp hover */
-.social a.whatsapp:hover {
-  background: #25d366;
-  color: white;
-  transform: scale(1.1);
-}
-
-/* Mail hover */
-.social a.mail:hover {
-  background: #ff6f91;
-  color: white;
-  transform: scale(1.1);
-}
-
-/* Glow effect */
-.social a:hover {
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
-}
-/* ⏳ Running hourglass animation */
-.running-hourglass {
-  display: inline-block;
-  animation: hourglassSpin 1.2s linear infinite;
-  margin-right: 6px;
-}
-
-@keyframes hourglassSpin {
-  0% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(20deg);
-  }
-  50% {
-    transform: rotate(0deg);
-  }
-  75% {
-    transform: rotate(-20deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-/* ===== Profile Image Top‑Left ===== */
-
-.profile-pic {
-  position: fixed;
-  top: 25px;
-  left: 25px;
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  padding: 5px;
-  background: linear-gradient(135deg, #ff6f91, #a18cd1, #1da1f2);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-  z-index: 100;
-  transition: 0.4s ease;
-}
-
-.profile-pic img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-/* Premium hover */
-.profile-pic:hover {
-  transform: scale(1.12) rotate(10deg);
-  box-shadow: 0 0 40px rgba(29, 161, 242, 0.6),
-    0 0 60px rgba(255, 111, 145, 0.6);
-}
-/* ---------- RESPONSIVE LAYOUT ---------- */
-.page {
-  max-width: 1200px;
-  margin: auto;
-}
-
-/* Desktop layout */
-@media (min-width: 900px) {
-  .page {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 30px;
-  }
-
-  .right-panel {
-    position: sticky;
-    top: 40px;
-    height: fit-content;
-  }
-}
-
-/* Mobile layout */
-@media (max-width: 899px) {
-  .page {
-    display: block;
-  }
-
-  .right-panel {
-    margin-top: 30px;
-  }
-}
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.photos {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.photos img {
-  width: 100%;
-  max-width: 220px;
-  border-radius: 12px;
-}
-.profile-pic img {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-@media (max-width: 600px) {
-  .profile-pic img {
-    width: 70px;
-    height: 70px;
-  }
-}
-body {
-  font-size: 16px;
-}
-
-@media (max-width: 600px) {
-  h1 {
-    font-size: 24px;
-  }
-
-  .btn {
-    width: 100%;
-    text-align: center;
-  }
-
-  .social a {
-    width: 100%;
-  }
-}
-* {
-  box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
-}
-
-body {
-  margin: 0;
-  background: linear-gradient(120deg, #fbc2eb, #a6c1ee);
-  min-height: 100vh;
-}
-
-/* ---------- TOP BAR ---------- */
-.top-bar {
+/* ---------- HEADER ---------- */
+.header {
   display: flex;
   align-items: center;
   gap: 20px;
-  padding: 20px;
+  padding: 25px;
   max-width: 1200px;
   margin: auto;
 }
 
-.profile-pic img {
+.profile-pic {
   width: 90px;
   height: 90px;
   border-radius: 50%;
+  padding: 5px;
+  background: linear-gradient(45deg, #ff6f91, #1da1f2);
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #6c9cff;
 }
 
 .title-box {
-  background: #fff5f8;
+  background: white;
   padding: 20px 30px;
   border-radius: 40px;
   flex: 1;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-.title-box h1 {
-  margin: 0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 /* ---------- LAYOUT ---------- */
-.layout {
+.page {
   max-width: 1200px;
   margin: auto;
-  padding: 20px;
+  padding: 30px;
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 30px;
@@ -512,102 +78,88 @@ body {
 
 /* ---------- SOCIAL ---------- */
 .social a {
-  display: block;
-  margin-bottom: 15px;
-  padding: 12px 18px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
   border-radius: 30px;
   background: white;
+  margin-bottom: 15px;
   text-decoration: none;
   color: #333;
   font-weight: bold;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  transition: 0.4s;
+}
+
+.social a:hover {
+  transform: scale(1.05);
+}
+
+.insta:hover {
+  background: #dd2a7b;
+  color: white;
+}
+.linkedin:hover {
+  background: #0077b5;
+  color: white;
+}
+.whatsapp:hover {
+  background: #25d366;
+  color: white;
+}
+.mail:hover {
+  background: #ff6f91;
+  color: white;
 }
 
 /* ---------- PHOTOS ---------- */
 .photos {
   display: flex;
   gap: 15px;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .photos img {
   width: 200px;
-  border-radius: 12px;
+  border-radius: 15px;
   object-fit: cover;
 }
 
 /* ---------- BUTTONS ---------- */
 .btn {
+  display: inline-block;
   background: linear-gradient(45deg, #ff6f91, #ff9671);
   color: white;
-  padding: 12px 22px;
+  padding: 12px 25px;
   border-radius: 25px;
   text-decoration: none;
   font-weight: bold;
-  display: inline-block;
 }
 
-.btn-row {
-  display: flex;
-  gap: 15px;
-}
-
-.btn.full {
-  width: 100%;
-  text-align: center;
-  margin-top: 10px;
-}
-
-/* ---------- MOBILE ---------- */
-@media (max-width: 900px) {
-  .layout {
-    grid-template-columns: 1fr;
-  }
-
-  .top-bar {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-/* ===== CLEAN DESKTOP LAYOUT ===== */
-.page {
-  max-width: 1200px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 30px;
-  padding: 30px;
-}
-
-/* Right panel now stays in its column */
+/* ---------- RIGHT PANEL ---------- */
 .right-panel {
-  position: sticky;
-  top: 40px;
   display: flex;
   flex-direction: column;
   gap: 25px;
+  position: sticky;
+  top: 30px;
 }
 
-/* Prevent overlap */
-.card,
-.side-card {
-  width: 100%;
-}
-
-/* Mobile layout */
+/* ---------- MOBILE ---------- */
 @media (max-width: 900px) {
   .page {
     grid-template-columns: 1fr;
   }
 
-  .right-panel {
-    position: static;
-    margin-top: 30px;
+  .header {
+    flex-direction: column;
+    text-align: center;
   }
-}
-.profile-pic {
-  position: absolute;
-  top: 20px;
-  left: 20px;
+
+  .photos img {
+    width: 100%;
+  }
 }
