@@ -450,3 +450,63 @@ body {
     text-align: center;
   }
 }
+/* ===== TOP BAR ===== */
+.top-bar {
+  max-width: 1200px;
+  margin: 40px auto;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 20px;
+}
+
+/* Profile image */
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #6c9cff;
+  transition: 0.4s ease;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Hover — NO BLUR, only glow */
+.profile-img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 40px rgba(108, 156, 255, 0.8);
+}
+
+/* Title box */
+.title-box {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 25px 40px;
+  border-radius: 50px;
+  flex: 1;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  transition: 0.4s;
+}
+
+.title-box:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 40px rgba(255, 111, 145, 0.6);
+}
+
+/* Name hover */
+.title-box h1 {
+  margin: 0;
+  transition: 0.4s;
+}
+
+.title-box:hover h1 {
+  color: #ff4f7b;
+  text-shadow: 0 0 15px rgba(255, 79, 123, 0.6);
+}
+
+/* Mobile layout */
+@media (max-width: 800px) {
+  .top-bar {
+    flex-direction: column;
+    text-align: center;
+  }
+}
