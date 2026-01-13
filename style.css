@@ -192,7 +192,7 @@ body {
   object-fit: cover;
 }
 .profile-pic:hover {
-  transform: scale(1.1) rotate(5deg);
+  transform: scale(1.1) rotate(15deg);
 }
 
 /* TOP BAR */
@@ -301,7 +301,7 @@ body {
 .top-bar {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
   padding: 20px;
   max-width: 1200px;
   margin: auto;
@@ -426,7 +426,7 @@ body {
 
 /* Hourglass */
 .running-hourglass {
-  animation: spin 1s infinite;
+  animation: spin 2s infinite;
 }
 @keyframes spin {
   0% {
