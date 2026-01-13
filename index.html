@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
+    <title>My Space ✨</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link
@@ -9,90 +10,104 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
 
-    <title>Snehaa ✨</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <!--Start of Tawk.to Script-->
-  <script type="text/javascript">
-    var Tawk_API = Tawk_API || {},
-      Tawk_LoadStart = new Date();
-    (function () {
-      var s1 = document.createElement("script"),
-        s0 = document.getElementsByTagName("script")[0];
-      s1.async = true;
-      s1.src = "https://embed.tawk.to/696636a9ee3f811980f6b7ee/1jerkb1ih";
-      s1.charset = "UTF-8";
-      s1.setAttribute("crossorigin", "*");
-      s0.parentNode.insertBefore(s1, s0);
-    })();
-  </script>
-  <!--End of Tawk.to Script-->
 
   <body>
-    <!-- Profile Pic -->
-    <div class="profile-pic">
-      <img src="sneha.jpg" />
-    </div>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+      var Tawk_API = Tawk_API || {},
+        Tawk_LoadStart = new Date();
+      (function () {
+        var s1 = document.createElement("script"),
+          s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = "https://embed.tawk.to/696636a9ee3f811980f6b7ee/1jerkb1ih";
+        s1.charset = "UTF-8";
+        s1.setAttribute("crossorigin", "*");
+        s0.parentNode.insertBefore(s1, s0);
+      })();
+    </script>
+    <!--End of Tawk.to Script-->
 
-    <!-- TOP BAR -->
+    <!-- TOP HEADER -->
     <div class="top-bar">
-      <h1>Hi, I’m Snehaa V Jeedi 💙</h1>
-      <p>MBA Graduate | Joining My New Job on 2nd February</p>
+      <div class="profile-pic">
+        <img src="sneha.jpg" />
+      </div>
+
+      <div class="title-box">
+        <h1 class="hover-name">Hi, I’m Snehaa V Jeedi 💙</h1>
+        <p class="tagline hover-tagline">
+          MBA Graduate | Joining My New Job on 2nd February
+        </p>
+      </div>
     </div>
 
+    <!-- MAIN LAYOUT -->
     <div class="layout">
       <!-- LEFT SIDE -->
-      <div class="left">
-        <div class="card hover-card">
-          <h2>About Me</h2>
+      <div>
+        <div class="card hover-box">
+          <h3>About Me</h3>
           <p>I completed my MBA and I’m starting a new chapter in my life.</p>
           <p>📖 Reading | 🎵 Music | ✈ Travel | 🧘 Self‑growth</p>
         </div>
 
-        <div class="card hover-card">
-          <h2>📸 My Moments</h2>
+        <div class="card hover-box">
+          <h3>📸 My Moments</h3>
           <div class="photos">
             <img src="photo1.JPG" />
             <img src="photo2.JPG" />
             <img src="photo3.JPG" />
           </div>
         </div>
+
+        <a href="day.html" class="btn full">Go to My Day →</a>
       </div>
 
       <!-- RIGHT SIDE -->
-      <div class="right">
-        <div class="social">
-          <a class="insta" href="https://instagram.com" target="_blank"
-            ><i class="fa-brands fa-instagram"></i> Instagram</a
-          >
-          <a class="linkedin" href="#"
-            ><i class="fa-brands fa-linkedin"></i> LinkedIn</a
-          >
-          <a class="whatsapp" href="#"
-            ><i class="fa-brands fa-whatsapp"></i> WhatsApp</a
-          >
-          <a class="mail" href="mailto:snehaavjeedi@gmail.com"
-            ><i class="fa-solid fa-envelope"></i> Mail Me</a
-          >
-        </div>
-
-        <div class="side-card hover-card">
+      <div class="right-panel">
+        <div class="side-card hover-box">
           <h3>My Resume 📄</h3>
-          <a class="btn" href="Resume.pdf" target="_blank">View</a>
-          <a class="btn" href="Resume.pdf" download>Download</a>
+          <div class="btn-row">
+            <a class="btn" href="Resume.pdf" target="_blank">View</a>
+            <a class="btn" href="Resume.pdf" download>Download</a>
+          </div>
         </div>
 
-        <div class="side-card hover-card">
-          <h3>⏳ Job Countdown</h3>
+        <div class="side-card hover-box">
+          <h3><span class="running-hourglass">⏳</span> Job Countdown</h3>
           <p id="countdown"></p>
         </div>
 
-        <div class="side-card hover-card">
+        <div class="side-card hover-box">
           <h3>💌 Today’s Motivation</h3>
           <p id="quote"></p>
         </div>
 
-        <a href="day.html" class="btn full">Go to My Day →</a>
+        <div class="social">
+          <a
+            class="insta"
+            href="https://www.instagram.com/_lil_missy_.27"
+            target="_blank"
+          >
+            <i class="fa-brands fa-instagram"></i> Instagram
+          </a>
+          <a
+            class="linkedin"
+            href="https://www.linkedin.com/in/sonyvjeedi"
+            target="_blank"
+          >
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+          <a class="whatsapp" href="https://wa.me/91XXXXXXXXXX" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+          </a>
+          <a class="mail" href="mailto:snehaavjeedi@gmail.com">
+            <i class="fa-solid fa-envelope"></i> Mail Me
+          </a>
+        </div>
       </div>
     </div>
 
@@ -102,23 +117,34 @@
       function updateCountdown() {
         const now = new Date();
         const diff = jobDate - now;
+
+        if (diff <= 0) {
+          document.getElementById("countdown").innerText =
+            "🎉 You started your new job!";
+          return;
+        }
+
         const d = Math.floor(diff / (1000 * 60 * 60 * 24));
         const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
         const m = Math.floor((diff / (1000 * 60)) % 60);
         const s = Math.floor((diff / 1000) % 60);
+
         document.getElementById(
           "countdown"
-        ).innerText = `${d} Days ${h}h ${m}m ${s}s to your first job 💼`;
+        ).innerText = `${d} Days ${h}h ${m}m ${s}s`;
       }
+
       setInterval(updateCountdown, 1000);
       updateCountdown();
 
       const quotes = [
         "Believe in yourself 💫",
-        "Your future is bright ✨",
-        "Big things are coming 🚀",
         "You already made it 💖",
+        "Big things are coming 🚀",
+        "Your future is bright ✨",
+        "Hard work always wins 💪",
       ];
+
       document.getElementById("quote").innerText =
         quotes[new Date().getDate() % quotes.length];
     </script>
