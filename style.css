@@ -366,7 +366,7 @@ h1:hover {
 
 /* Premium hover */
 .profile-pic:hover {
-  transform: scale(1.12) rotate(40deg);
+  transform: scale(1.12) rotate(10deg);
   box-shadow: 0 0 40px rgba(29, 161, 242, 0.6),
     0 0 60px rgba(255, 111, 145, 0.6);
 }
