@@ -1,47 +1,156 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My Day</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
-  </head>
-  <body>
-    <body
-      style="
+    <title>My Day ✨</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        min-height: 100vh;
         background: linear-gradient(135deg, #1f1c2c, #928dab);
         color: white;
         text-align: center;
-        padding: 50px;
-      "
-    >
-      <h1>My Day 🌟</h1>
-      <p>This is Snehaa’s beautiful second page.</p>
-      <a href="index.html" class="btn">← Back to Profile</a>
-    </body>
+        padding: 50px 20px;
+      }
 
-    <div class="page">
-      <h2>My Day 📝</h2>
+      h1 {
+        font-size: 42px;
+      }
 
-      <div class="card">
-        <input id="taskInput" placeholder="Enter task" />
-        <button onclick="addTask()">Add</button>
-        <ul id="taskList"></ul>
-      </div>
+      .card {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 30px;
+        max-width: 600px;
+        margin: 30px auto;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        transition: 0.4s;
+      }
 
-      <h2>Word Quest 🧩</h2>
+      .card:hover {
+        transform: scale(1.03);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      }
 
-      <div class="stats">
-        Score: <b id="score">0</b> | 🔥 Streak: <b id="streak">0</b>
-      </div>
+      input {
+        padding: 12px;
+        border-radius: 10px;
+        border: none;
+        width: 70%;
+        font-size: 16px;
+      }
 
-      <div class="word-game">
-        <div id="tiles"></div>
-        <input id="wordInput" maxlength="5" placeholder="Enter 5‑letter word" />
-        <button onclick="checkWord()">Try</button>
-        <p id="wordResult"></p>
-      </div>
+      button {
+        padding: 12px 20px;
+        background: #ff6f91;
+        border: none;
+        border-radius: 20px;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+      }
 
-      <a href="index.html" class="btn">← Back</a>
+      button:hover {
+        background: #ff9671;
+        transform: scale(1.05);
+      }
+
+      .btn {
+        display: inline-block;
+        margin-top: 30px;
+        background: linear-gradient(45deg, #ff6f91, #ff9671);
+        padding: 14px 28px;
+        border-radius: 30px;
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        transition: 0.4s;
+      }
+
+      .btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 25px rgba(255, 111, 145, 0.7);
+      }
+
+      #tiles {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .tile {
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
+        background: #444;
+        line-height: 50px;
+        font-size: 22px;
+        font-weight: bold;
+      }
+
+      .green {
+        background: #4caf50;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>My Day ✨</h1>
+    <p>Welcome to Snehaa’s beautiful day planner 💖</p>
+
+    <!-- TODO -->
+    <div class="card">
+      <h2>My Tasks 📝</h2>
+      <input id="taskInput" placeholder="Enter task" />
+      <button onclick="addTask()">Add</button>
+      <p id="taskList"></p>
     </div>
+
+    <!-- GAME -->
+    <div class="card">
+      <h2>Word Quest 🧩</h2>
+      <p>Score: <span id="score">0</span></p>
+      <input id="wordInput" maxlength="5" placeholder="Enter 5‑letter word" />
+      <button onclick="checkWord()">Try</button>
+      <div id="tiles"></div>
+    </div>
+
+    <a class="btn" href="index.html">← Back to Profile</a>
+
+    <script>
+      function addTask() {
+        let task = document.getElementById("taskInput").value;
+        if (task !== "") {
+          document.getElementById("taskList").innerHTML += "• " + task + "<br>";
+          document.getElementById("taskInput").value = "";
+        }
+      }
+
+      const secret = "SMILE";
+      let score = 0;
+
+      function checkWord() {
+        let word = document.getElementById("wordInput").value.toUpperCase();
+        let tiles = document.getElementById("tiles");
+        tiles.innerHTML = "";
+
+        for (let i = 0; i < 5; i++) {
+          let div = document.createElement("div");
+          div.className = "tile";
+          div.innerText = word[i] || "";
+          if (word[i] === secret[i]) div.classList.add("green");
+          tiles.appendChild(div);
+        }
+
+        if (word === secret) {
+          score++;
+          document.getElementById("score").innerText = score;
+        }
+
+        document.getElementById("wordInput").value = "";
+      }
+    </script>
   </body>
 </html>
