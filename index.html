@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Snehaa V Jeedi</title>
 
     <link rel="stylesheet" href="style.css" />
@@ -10,6 +11,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
   </head>
+
   <body>
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
@@ -26,11 +28,11 @@
       })();
     </script>
     <!--End of Tawk.to Script-->
-    <!-- TOP BAR -->
+
     <div class="top-bar">
-      <a href="sneha.jpg" target="_blank" class="profile-pic">
+      <div class="profile-pic">
         <img src="sneha.jpg" />
-      </a>
+      </div>
 
       <div class="title-box">
         <h1>Hi, I’m Snehaa V Jeedi 💙</h1>
@@ -38,18 +40,42 @@
       </div>
     </div>
 
-    <!-- MAIN LAYOUT -->
     <div class="layout">
-      <!-- LEFT -->
       <div>
         <div class="card">
-          <h3>About Me</h3>
+          <h2>About Me</h2>
           <p>I completed my MBA and I’m starting a new chapter in my life.</p>
           <p>📖 Reading | 🎵 Music | ✈ Travel | 🧘 Self‑growth</p>
         </div>
 
+        <div class="social">
+          <a
+            class="insta"
+            href="https://www.instagram.com/_lil_missy_.27?igsh=d3czYTc4OHJlMnBz"
+            target="_blank"
+          >
+            <i class="fa-brands fa-instagram"></i> Instagram
+          </a>
+
+          <a
+            class="linkedin"
+            href="https://www.linkedin.com/in/sonyvjeedi"
+            target="_blank"
+          >
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+
+          <a class="whatsapp" href="https://wa.me/91XXXXXXXXXX" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+          </a>
+
+          <a class="mail" href="mailto:snehaavjeedi@gmail.com">
+            <i class="fa-solid fa-envelope"></i> Mail Me
+          </a>
+        </div>
+
         <div class="card">
-          <h3>📸 My Moments</h3>
+          <h2>📸 My Moments</h2>
           <div class="photos">
             <img src="photo1.JPG" />
             <img src="photo2.JPG" />
@@ -58,29 +84,24 @@
         </div>
       </div>
 
-      <!-- RIGHT -->
       <div>
         <div class="side-card">
-          <h3>My Resume 📄</h3>
-          <div class="btn-row">
-            <a class="btn" href="Resume.pdf" target="_blank">View</a>
-            <a class="btn" href="Resume.pdf" download>Download</a>
-          </div>
+          <h2>My Resume 📄</h2>
+          <a class="btn" href="Resume.pdf" target="_blank">View</a>
+          <a class="btn" href="Resume.pdf" download>Download</a>
         </div>
 
         <div class="side-card">
-          <h3>⏳ Job Countdown</h3>
+          <h2><span class="hourglass">⏳</span> Job Countdown</h2>
           <p id="countdown"></p>
         </div>
 
         <div class="side-card">
-          <h3>💌 Today’s Motivation</h3>
+          <h2>💌 Today’s Motivation</h2>
           <p id="quote"></p>
         </div>
 
-        <div class="side-card">
-          <a href="day.html" class="btn full">Next → My Day</a>
-        </div>
+        <a class="btn full" href="day.html">Go to My Day →</a>
       </div>
     </div>
 
@@ -90,29 +111,25 @@
       function updateCountdown() {
         const now = new Date();
         const diff = jobDate - now;
-
-        if (diff <= 0) {
-          countdown.innerText = "🎉 You started your new job!";
-          return;
-        }
-
         const d = Math.floor(diff / (1000 * 60 * 60 * 24));
         const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
         const m = Math.floor((diff / (1000 * 60)) % 60);
         const s = Math.floor((diff / 1000) % 60);
-
-        countdown.innerText = `${d} Days ${h}h ${m}m ${s}s`;
+        document.getElementById(
+          "countdown"
+        ).innerText = `${d} Days ${h}h ${m}m ${s}s`;
       }
       setInterval(updateCountdown, 1000);
       updateCountdown();
 
       const quotes = [
         "Believe in yourself 💫",
+        "Big things are coming 🚀",
         "Your future is bright ✨",
         "Hard work always wins 💪",
-        "Big things are coming 🚀",
       ];
-      quote.innerText = quotes[new Date().getDate() % quotes.length];
+      document.getElementById("quote").innerText =
+        quotes[new Date().getDate() % quotes.length];
     </script>
   </body>
 </html>
