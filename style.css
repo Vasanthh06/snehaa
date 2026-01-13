@@ -5,32 +5,31 @@
 
 body {
   margin: 0;
-  background: linear-gradient(135deg, #ffb3c6, #cdb4ff, #a2d2ff);
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #a1c4fd);
   min-height: 100vh;
 }
 
-/* TOP BAR */
 .top-bar {
-  max-width: 1200px;
-  margin: auto;
-  padding: 30px;
   display: flex;
   align-items: center;
   gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .profile-pic img {
   width: 90px;
   height: 90px;
   border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid #4dabf7;
+  border: 4px solid #4da3ff;
   transition: 0.4s;
+  cursor: pointer;
 }
 
-.profile-pic:hover img {
-  transform: scale(1.08);
-  box-shadow: 0 0 25px #4dabf7;
+.profile-pic img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #4da3ff;
 }
 
 .title-box {
@@ -38,45 +37,76 @@ body {
   padding: 20px 30px;
   border-radius: 40px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  flex: 1;
+  transition: 0.4s;
 }
 
 .title-box:hover {
   transform: scale(1.03);
+  box-shadow: 0 0 30px rgba(0, 153, 255, 0.6);
 }
 
-/* LAYOUT */
 .layout {
   max-width: 1200px;
   margin: auto;
-  padding: 30px;
+  padding: 20px;
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 30px;
 }
 
-/* CARDS */
 .card,
 .side-card {
   background: white;
   padding: 25px;
   border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   margin-bottom: 25px;
   transition: 0.4s;
 }
 
 .card:hover,
 .side-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-/* PHOTOS */
+.social a {
+  display: block;
+  margin: 12px 0;
+  padding: 12px 20px;
+  border-radius: 30px;
+  background: white;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: 0.4s;
+}
+
+.social a:hover {
+  transform: scale(1.1);
+  color: white;
+}
+
+.insta:hover {
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+}
+.linkedin:hover {
+  background: #0077b5;
+}
+.whatsapp:hover {
+  background: #25d366;
+}
+.mail:hover {
+  background: #ff6f91;
+}
+
 .photos {
   display: flex;
   gap: 15px;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .photos img {
@@ -87,25 +117,42 @@ body {
 
 .photos img:hover {
   transform: scale(1.1);
+  box-shadow: 0 0 20px pink;
 }
 
-/* BUTTONS */
 .btn {
+  display: inline-block;
   background: linear-gradient(45deg, #ff6f91, #ff9671);
   color: white;
-  padding: 12px 22px;
-  border-radius: 25px;
+  padding: 12px 25px;
+  border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
+  margin: 5px;
 }
 
 .btn.full {
   width: 100%;
-  display: block;
   text-align: center;
 }
 
-/* MOBILE */
+.hourglass {
+  display: inline-block;
+  animation: spin 1.2s infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 @media (max-width: 900px) {
   .layout {
     grid-template-columns: 1fr;
@@ -114,4 +161,55 @@ body {
     flex-direction: column;
     text-align: center;
   }
+}
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 30px 0;
+}
+
+.social a {
+  flex: 1 1 220px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 40px;
+  background: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: 0.4s;
+}
+
+/* Instagram */
+.social a.insta:hover {
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
+  color: white;
+}
+
+/* LinkedIn */
+.social a.linkedin:hover {
+  background: #0077b5;
+  color: white;
+}
+
+/* WhatsApp */
+.social a.whatsapp:hover {
+  background: #25d366;
+  color: white;
+}
+
+/* Mail */
+.social a.mail:hover {
+  background: #ff6f91;
+  color: white;
+}
+
+.social a:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
 }
