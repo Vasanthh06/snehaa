@@ -127,9 +127,41 @@
         "Big things are coming 🚀",
         "Your future is bright ✨",
         "Hard work always wins 💪",
+        "You are stronger than you think 💖",
+        "Every day is a new beginning 🌅",
+        "Success is already on its way 🚗💼",
+        "You are becoming unstoppable 🔥",
+        "Dream big and dare to fail 🌈",
+        "Your journey is beautiful 🌷",
+        "You were born to shine ✨",
+        "Keep going, you’re doing amazing 💕",
+        "One step closer every day 👣",
+        "You deserve all good things 💎",
+        "Stay positive and powerful 💫",
+        "Your hard work will pay off 🏆",
+        "Confidence looks good on you 😎",
+        "You are creating your future 🚀",
+        "Trust the process 🌿",
+        "You are enough 💖",
+        "Success loves consistency 🔑",
+        "Your time is coming ⏳",
+        "Be proud of yourself 🌸",
+        "Great things take time 🕰️",
+        "You are glowing from within ✨",
+        "You are building something amazing 🏗️",
+        "Your efforts matter 💪",
+        "Magic happens when you don’t give up 🔮",
+        "You’re meant for big things 🌟",
+        "Believe. Work. Achieve. 🏆",
       ];
-      document.getElementById("quote").innerText =
-        quotes[new Date().getDate() % quotes.length];
+
+      function get12HourIndex() {
+        const now = new Date();
+        const hours = now.getTime() / (1000 * 60 * 60);
+        return Math.floor(hours / 12) % quotes.length;
+      }
+
+      document.getElementById("quote").innerText = quotes[get12HourIndex()];
     </script>
   </body>
 </html>
