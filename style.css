@@ -163,3 +163,127 @@ body {
     width: 100%;
   }
 }
+* {
+  box-sizing: border-box;
+  font-family: Segoe UI;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+  min-height: 100vh;
+}
+
+/* PROFILE */
+.profile-pic {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  padding: 5px;
+  background: linear-gradient(45deg, #ff6f91, #1da1f2);
+}
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.profile-pic:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* TOP BAR */
+.top-bar {
+  text-align: center;
+  padding: 30px;
+  color: white;
+}
+
+/* LAYOUT */
+.layout {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  padding: 20px;
+}
+
+/* CARDS */
+.card,
+.side-card {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  margin-bottom: 25px;
+}
+
+/* HOVER */
+.hover-card {
+  transition: 0.4s;
+}
+.hover-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* PHOTOS */
+.photos {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.photos img {
+  width: 180px;
+  border-radius: 12px;
+  transition: 0.4s;
+}
+.photos img:hover {
+  transform: scale(1.1);
+}
+
+/* SOCIAL */
+.social a {
+  display: block;
+  background: white;
+  padding: 14px;
+  border-radius: 30px;
+  margin-bottom: 12px;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  transition: 0.4s;
+}
+.social a:hover {
+  transform: scale(1.1);
+}
+
+/* BUTTONS */
+.btn {
+  display: inline-block;
+  background: #ff6f91;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  margin: 8px;
+}
+.btn:hover {
+  transform: scale(1.1);
+}
+.btn.full {
+  width: 100%;
+  text-align: center;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
